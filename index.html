@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Clock animation</title>
+    <style>
+      :root {
+        --hours: 0;
+        --minutes: 0;
+        --seconds: 0;
+	--speed: 60;
+      }
+      main {
+        display: flex;
+        height: 100vh;
+        width: calc(100vw-2 * 17px);
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div class="icon">
+        <svg width="300" height="300" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="100" stroke-width="0" fill="#3cbcd4" />
+          <line
+            class="clock-big"
+            x1="100"
+            y1="100"
+            x2="100"
+            y2="5"
+            stroke-width="3"
+            stroke="#ff8080"
+            stroke-linecap="round"
+          />
+          <circle cx="100" cy="100" r="10" stroke-width="0" fill="#ffffff" />
+        </svg>
+      </div>
+    </main>
+
+    <script>
+      const now = new Date();
+      document.querySelector(":root").style.setProperty("--hours", now.getHours());
+      document.querySelector(":root").style.setProperty("--minutes", now.getMinutes());
+      document.querySelector(":root").style.setProperty("--seconds", now.getSeconds());
+  </script>
+  </body>
+</html>
